@@ -1,0 +1,82 @@
+Some Useful Query
+
+EC2
+
+//EC2 Analisi
+MATCH (n:AWSEC2) where n.InstanceId = "xxxxxxxxxx"
+RETURN n
+
+ 
+//EC2 with ssh open to any
+MATCH (i)-[:In]->(n:PortRange)-[:PortRangeSG]->(p)-[:SGAttachment]->(r) where n.Name = "From22To22" and i.CidrIp =  "0.0.0.0/0"
+return n, i,p,r
+
+ 
+//Firewall EC2
+MATCH p= ()-[:PortRangeSG]->()-[:SGAttachment]->(n:AWSEC2)
+where n.InstanceId = "xxxxxxxxxxxxxxxxx"
+RETURN p
+
+ 
+
+ 
+
+NETWORK
+
+// Since Peering
+MATCH p=()-[r:owner]->(f)<-[:geo]-()
+where (f.Name <> "vpc-default" and f.Name <> "NoName")
+RETURN p as name
+union all
+MATCH p=()-[:TransitGatewayAttachment]->()
+RETURN p as name
+union all match (v:VPNCustomerGateway)
+return v as name
+union all match pe = ()-[:Peering]-()
+return pe as name
+
+ 
+
+//Network Fino alle VPN
+MATCH p=()-[r:owner]->(f)<-[:geo]-()
+where (f.Name <> "vpc-default" and f.Name <> "NoName")
+RETURN p as name
+union all
+MATCH p=()-[:TransitGatewayAttachment]->()
+RETURN p as name
+union all match (v:VPNCustomerGateway)
+return v as name
+
+ 
+
+// Since EC2
+MATCH p=()-[r:owner]->(f)<-[:geo]-()
+where (f.Name <> "vpc-default" and f.Name <> "NoName")
+RETURN p as name
+union all
+MATCH p=()-[:TransitGatewayAttachment]->()
+RETURN p as name
+union all match (v:VPNCustomerGateway)
+return v as name
+union all match pe = ()-[:Peering]-()
+return pe as name
+union all match az = (f)-[:InZone|:Ec2Subnet]->() where (f.Name <> "vpc-default" and f.Name <> "NoName")
+return az as name
+
+ 
+
+ 
+
+// Since Subnet
+MATCH p=()-[r:owner]->(f)<-[:geo]-()
+where (f.Name <> "vpc-default" and f.Name <> "NoName")
+RETURN p as name
+union all
+MATCH p=()-[:TransitGatewayAttachment]->()
+RETURN p as name
+union all match (v:VPNCustomerGateway)
+return v as name
+union all match pe = ()-[:Peering]-()
+return pe as name
+union all match az = (f)-[:InZone]->() where (f.Name <> "vpc-default" and f.Name <> "NoName")
+return az as name
