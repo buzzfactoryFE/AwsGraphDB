@@ -81,14 +81,10 @@ Enjoy your exploration!! looking for mistake. The file QueryExample.txt contains
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 
 ## Authors
 
-* **BuzzFactory** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **BuzzFactory** 
 
 ## License
 
