@@ -1,0 +1,13 @@
+[
+    {
+      "AccountsFilepath": "/mnt/d/scripts/awsucmdb/custodian/accounts.yml",
+      "custodianFiles": "/mnt/d/scripts/awsucmdb/custodian/output/",
+      "NeoParametes": [
+        {
+          "Url": "bolt://localhost:7687",
+          "Username": "neo4j",
+          "Password": "awsucmdb"
+        }
+      ]
+    }
+  ]

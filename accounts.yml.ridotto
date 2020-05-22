@@ -1,0 +1,37 @@
+accounts:
+- account_id: '292864112894'
+  email: crif-core-hq-shared@crif.com
+  name: CRIF-CORE-HQ-SHARED
+  role: arn:aws:iam::292864112894:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE
+- account_id: '334529640030'
+  email: crif-core-sg-shared@crif.com
+  name: CRIF-CORE-SG-SHARED
+  role: arn:aws:iam::334529640030:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE
+- account_id: '318227016583'
+  email: crif-core-hq-tgw-de@crif.com
+  name: CRIF-CORE-DE-SHARED
+  role: arn:aws:iam::318227016583:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE
+- account_id: '391170362171'
+  email: crif-core-in-shared@crif.com
+  name: CRIF-CORE-IN-SHARED
+  role: arn:aws:iam::391170362171:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE
+- account_id: '844444358273'
+  email: crif-core-hq-loggin@crif.com
+  name: CRIF-CORE-HQ-LOGGING
+  role: arn:aws:iam::844444358273:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE
+- account_id: '871996963598'
+  email: crif-core-us-shared@crif.com
+  name: CRIF-CORE-US-SHARED
+  role: arn:aws:iam::871996963598:role/OrganizationAccountAccessRole
+  tags:
+  - path:/CRIF-CORE

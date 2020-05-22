@@ -1,0 +1,23 @@
+policies:
+ - name: ec2-instances
+   resource: aws.ec2
+ - name: security-group
+   resource: security-group
+ - name: vpcs
+   resource: vpc
+ - name: routetable
+   resource: route-table
+ - name: subnets
+   resource: subnet
+ - name: TransitGateway
+   resource: transit-gateway
+ - name: TransitGatewayAttachment
+   resource: transit-attachment
+ - name: vpns
+   resource: vpn-connection
+ - name: vpngateway
+   resource: vpn-gateway
+ - name: peering
+   resource: peering-connection
+ - name: lambda
+   resource: aws.lambda
