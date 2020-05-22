@@ -41,43 +41,27 @@ c7n-org run -c accounts.yml -s output -u custodian.yml --region all --dryrun
 ```
 custodian.yml is in the repository
 
-when completed you output folder should full of json files describing your resources
+when completed your output folder should full of json files describing your resources. Now you are ready to load data into Neo4j, configure with the correct parameters the file AWSNEoConfig.json and run the python scripts from the first to the tenth.
 
 ```
-until finished
+01.NeoLoadsAccounts.py
+02.NeoRegionLoader.py
+03.NeoLoadVPC.py
+04.NeoLoadSubnetAndZones.py
+05.NeoLoadTransit.py
+06.NeoLoadVpns.py
+07.NeoLoadTgwAttachments.py
+08.NeoLoadPeering.py
+09.NeoLoadSecurityGroup.py
+10.NeoLoadEc2.py
+
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Verify that everything went well running neo4j call db.schema.validation and verify that the schema is the same of my picture.
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+Enjoy your exploration. The file QueryExample.txt contains some Cypher Query useful.
 
 ## Contributing
 
