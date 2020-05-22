@@ -1,7 +1,7 @@
 [
     {
-      "AccountsFilepath": "/mnt/d/scripts/awsucmdb/custodian/accounts.yml",
-      "custodianFiles": "/mnt/d/scripts/awsucmdb/custodian/output/",
+      "AccountsFilepath": "yourpath/accounts.yml",
+      "custodianFiles": "yourpath/output/",
       "NeoParametes": [
         {
           "Url": "bolt://localhost:7687",
