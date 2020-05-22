@@ -29,7 +29,10 @@ Software can be downloaded here:
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+First of all install Cloud Custodian and following the documentation here https://cloudcustodian.io/docs/index.html create accounts.yml file ( in the repository you have an example how yaml file should looks like )
+If you have AWS Organizatin follow the link below
+https://cloudcustodian.io/docs/tools/c7n-org.html
+for generating the file
 
 Say what the step will be
 
