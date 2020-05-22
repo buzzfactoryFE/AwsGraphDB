@@ -29,18 +29,19 @@ Software can be downloaded here:
 
 ### Installing
 
-First of all install Cloud Custodian and following the documentation here https://cloudcustodian.io/docs/index.html create accounts.yml file ( in the repository you have an example how yaml file should looks like )
+First of all install Cloud Custodian and following the documentation here https://cloudcustodian.io/docs/index.html create accounts.yml file ( in the repository you have an example how yml file should looks like )
 If you have AWS Organizatin follow the link below
 https://cloudcustodian.io/docs/tools/c7n-org.html
 for generating the file
 
-Say what the step will be
+When ready using the command below you should able to get everythig needed from your aws infrastructure. We use --dryrun but **i kindly suggest to run the command using a readall IAM credential to avoid mistakes**
 
 ```
-Give the example
+c7n-org run -c accounts.yml -s output -u custodian.yml --region all --dryrun
 ```
+custodian.yml is in the repository
 
-And repeat
+when completed you output folder should full of json files describing your resources
 
 ```
 until finished
