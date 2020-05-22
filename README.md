@@ -3,12 +3,12 @@
 In the AWS Cloud often is not easy keep under control your objects like EC2, VPNs, Transiti Gateway Attachments, vpc peering, security groups and so on, especially
 when you are working with multiple accounts and vpcs spread across all over the world. the mistake is always behind the corner.
 Graph databases are the best tool to use to keep relationships under control and identify relationships that shouldn' exist and can compromize your security.
-This project uses Neo4j Desktop , Cloud Custion and pyhton scripts to load data gathered using Custion into Neo4j database for analisys.
+This project uses Neo4j Desktop , Cloud Custodian and pyhton scripts to load data gathered using Custodian into Neo4j database for analisys.
 In the picture below DB schema
 ![GitHub Logo](/images/dbschema.png)
-here an exaple on how network topology can looks like
+here an example on how network topology can looks like
 ![GitHub Logo](/images/NetworkTopology.png)
-here an exaple on explore your date looking for mistakes
+here an example on explore your date looking for mistakes: EC2 instances with port 22 open to any
 ![GitHub Logo](/images/EC2With22OpentoAny.png)
 
 
@@ -18,11 +18,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+**Neo4j Desktop** installed on your pc and some basic knowledge on how create a Project and how to write simple queries.
+Software can be downloaded here:
+[Neo4j Desktop](https://neo4j.com/download/)
 
-```
-Give examples
-```
+**Python 3.6** Enviroment 
+
+**Cloud Custodion** installed and configured for your AWS Environment. At the link below you can find all the info required.
+[Cloud Custodian](https://pypi.org/project/c7n/)
 
 ### Installing
 
