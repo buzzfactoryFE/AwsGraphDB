@@ -41,7 +41,23 @@ c7n-org run -c accounts.yml -s output -u custodian.yml --region all --dryrun
 ```
 custodian.yml is in the repository
 
-when completed your output folder should full of json files describing your resources. Now you are ready to load data into Neo4j, configure with the correct parameters the file AWSNEoConfig.json and run the python scripts from the first to the tenth.
+when completed your output folder should full of json files describing your resources. Now you are ready to load data into Neo4j, configure AWSNEoConfig.json with the correct parameters 
+```
+[
+    {
+      "AccountsFilepath": "yourpath/accounts.yml",
+      "custodianFiles": "yourpath/output/",
+      "NeoParametes": [
+        {
+          "Url": "bolt://localhost:7687",
+          "Username": "neo4j",
+          "Password": "awsucmdb"
+        }
+      ]
+    }
+]
+```
+and run the python scripts from the first to the tenth.
 
 ```
 01.NeoLoadsAccounts.py
@@ -61,19 +77,16 @@ Verify that everything went well running neo4j call db.schema.validation and ver
 
 ## Running the tests
 
-Enjoy your exploration. The file QueryExample.txt contains some Cypher Query useful.
+Enjoy your exploration!! looking for mistake. The file QueryExample.txt contains some Cypher Query useful.
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **BuzzFactory** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -81,8 +94,3 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
