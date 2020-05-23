@@ -1,9 +1,8 @@
-# AWS Objects in Neo4j
+# AWS Infrastructure in Neo4j (AWSUCMDB) and Security Analisys
 
-In the AWS Cloud often is not easy keep under control your objects like EC2, VPNs, Transiti Gateway Attachments, vpc peering, security groups and so on, especially
-when you are working with multiple accounts and vpcs spread across all over the world. the mistake is always behind the corner.
-Graph databases are the best tool to use to keep relationships under control and identify relationships that shouldn' exist and can compromize your security.
-This project uses Neo4j Desktop , Cloud Custodian and pyhton scripts to load data gathered using Custodian into Neo4j database for analisys.
+Using AWS Cloud often is not easy keep under control your objects like EC2, VPNs, Transit Gateway Attachments, vpc peering, security groups and so on, especially when you are working with multiple accounts and vpcs spread across all over the world. The mistake is always behind the corner.
+Graph databases are the best tool to use to keep relationships under control and identify relationships that shouldn't exist and can compromize your security.
+This project uses Neo4j Desktop , Cloud Custodian and python scripts to load data gathered using Custodian into Neo4j database for analisys.
 In the picture below DB schema
 ![GitHub Logo](/images/dbschema.png)
 here an example on how network topology can looks like
@@ -29,10 +28,10 @@ Software can be downloaded here:
 
 ### Installing
 
-First of all install Cloud Custodian and following the documentation here https://cloudcustodian.io/docs/index.html create accounts.yml file ( in the repository you have an example how yml file should looks like )
-If you have AWS Organizatin follow the link below
+First of all install Cloud Custodian and following the documentation here https://cloudcustodian.io/docs/index.html , second create accounts.yml file ( in the repository you have an example how yml file should looks like ). 
+If you have AWS Organization accounts.yml can be generated automamatically.
 https://cloudcustodian.io/docs/tools/c7n-org.html
-for generating the file
+
 
 When ready using the command below you should able to get everythig needed from your aws infrastructure. We use --dryrun but **i kindly suggest to run the command using a readall IAM credential to avoid mistakes**
 
@@ -41,7 +40,7 @@ c7n-org run -c accounts.yml -s output -u custodian.yml --region all --dryrun
 ```
 custodian.yml is in the repository
 
-when completed your output folder should full of json files describing your resources. Now you are ready to load data into Neo4j, configure AWSNEoConfig.json with the correct parameters 
+When completed your output folder should full of json files describing your resources. Now you are ready to load data into Neo4j, configure AWSNEoConfig.json with the correct parameters. Parameters are path to account.yml, the output folder with jason files and connection string to your Neo4j installation.
 ```
 [
     {
@@ -57,7 +56,8 @@ when completed your output folder should full of json files describing your reso
     }
 ]
 ```
-and run the python scripts from the first to the tenth.
+
+The last step is load data into Neo4j using the python scripts from the first to the tenth. To keep the things simple i prefered have dedicated script for each object import.
 
 ```
 01.NeoLoadsAccounts.py
@@ -77,9 +77,12 @@ Verify that everything went well running neo4j call db.schema.validation and ver
 
 ## Running the tests
 
-Enjoy your exploration!! looking for mistake. The file QueryExample.txt contains some Cypher Query useful.
+Enjoy your exploration!! 
+My first exploration helped me to identify a lot of misconfiguration and also understand how my colleagues use the infrastructure.
+The file QueryExample.txt contains some Cypher Query useful.
 
 ## Contributing
+I am not a good developer so my code is horrible and i didn't get time to write comments into the code, so my next steps will be:
 
 
 ## Authors
