@@ -79,11 +79,16 @@ Verify that everything went well running neo4j call db.schema.validation and ver
 
 Enjoy your exploration!! 
 My first exploration helped me to identify a lot of misconfiguration and also understand how my colleagues use the infrastructure.
-The file QueryExample.txt contains some Cypher Query useful.
+The file [QueryExample](QueryExample.txt)  contains some Cypher Query useful.
 
 ## Contributing
-I am not a good developer so my code is horrible and i didn't get time to write comments into the code, so my next steps will be:
+I am not a good developer so my code is horrible and i didn't get time to write comments into the code, in my mind steps are:
 
+* add RDS data into database
+* add Lambda data into database
+* comment the code
+* improve the code
+* try to use AWS Neptune instead of Neo4j
 
 ## Authors
 
