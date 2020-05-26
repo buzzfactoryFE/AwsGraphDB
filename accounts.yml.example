@@ -1,0 +1,12 @@
+accounts:
+- account_id: '11111111111'
+  email: ff@whatever.com
+  name: WHATEVER1
+  role: arn:aws:iam::11111111111:role/OrganizationAccountAccessRole
+  tags:
+  - path:/WHATEVER
+- account_id: '22222222222'
+  email: dd@whatever.com
+  name: WHATEVER2
+  role: arn:aws:iam::22222222222:role/OrganizationAccountAccessRole
+  tags:
