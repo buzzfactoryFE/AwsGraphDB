@@ -48,7 +48,7 @@ MERGE (r)-[:geo]->(v)'
 
 def NeoLoadAccounts(filepath):
     with open(filepath) as f:
-        accountList = yaml.load(f)
+        accountList = yaml.safe_load(f)
         for acc in accountList["accounts"]:
             print(acc['name'])
             for folder in os.listdir(outputfiles+acc['name'] ):
