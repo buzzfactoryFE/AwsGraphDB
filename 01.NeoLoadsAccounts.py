@@ -13,7 +13,7 @@ AccountsFilepath = conf[0]["AccountsFilepath"]
 def NeoLoadAccounts(filepath):
 # loads contents aws accounts
     with open(filepath) as f:
-        accountList = yaml.load(f)
+        accountList = yaml.safe_load(f)
         for acc in accountList["accounts"]:
             print(acc['name'])
             print(acc['account_id'])
