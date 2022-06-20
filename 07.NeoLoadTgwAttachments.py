@@ -104,7 +104,7 @@ MERGE (t)-[:TransitGatewayAttachment {Name: "'+Name+'", Id: "'+TransitGatewayAtt
 
 def NeoLoadAccounts(filepath):
     with open(filepath) as f:
-        accountList = yaml.load(f)
+        accountList = yaml.safe_load(f)
         for acc in accountList["accounts"]:
             print(acc['name'])
             account_id = acc['account_id']
